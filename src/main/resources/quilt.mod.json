@@ -5,11 +5,12 @@
 		"id": "netws",
 		"version": "${version}",
 		"metadata": {
-			"name": "Never Enough Timey-Wimey Stuff (NETWS)",
+			"name": "Never Enough Timey Wimey Stuff (NETWS)",
 			"description": "Never Enough Timey-Wimey Stuff",
 			"contributors": {
 				"Danyella Strikann": "Owner"
 			},
+			"license": "MIT",
 			"contact": {
 				"homepage": "https://danyella.works/",
 				"issues": "https://github.com/movva-gpu/timey-wimey/issues",
@@ -19,7 +20,11 @@
 		},
 		"intermediate_mappings": "net.fabricmc:intermediary",
 		"entrypoints": {
-			"init": "works.danyella.netws.NETWSMod"
+			"init": "works.danyella.netws.Netws",
+			"client_init": "works.danyella.netws.NetwsClient",
+			"fabric-datagen": [
+				"works.danyella.netws.NetwsDataGen"
+			]
 		},
 		"depends": [
 			{
