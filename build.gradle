@@ -3,6 +3,31 @@ plugins {
 	alias libs.plugins.quilt.loom
 }
 
+// Spotless
+plugins {
+	id('com.diffplug.spotless') version "6.25.0"
+}
+
+spotless {
+	format 'misc', {
+		target '*.gradle', '.gitattributes', '.gitignore'
+
+		trimTrailingWhitespace()
+		indentWithTabs()
+		endWithNewline()
+	}
+
+	java {
+		googleJavaFormat().aosp().reflowLongStrings().skipJavadocFormatting()
+
+		indentWithTabs()
+		trimTrailingWhitespace()
+		endWithNewline()
+		formatAnnotations()
+		licenseHeader '/* This code is licensed under MIT License - Danyella Strikann (C) 2024 */'
+	}
+}
+
 base {
 	archivesName = project.archives_base_name
 }
